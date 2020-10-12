@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Kalendarz</title>
+    
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-
+    <div class="kontener">
+        <h1>Kalendarz</h1>
+    
 <?php
     //Pobranie danych dot. daty
     $dzien = date("d");
     $miesiac = date("m");
     $rok = date("Y");
     $dni;
+        
+    echo "<h2>Miesiąc: $miesiac</h2>";
     
     //Ilość dni w zależności od miesiąca
     switch($miesiac) {
@@ -43,6 +49,7 @@
     echo $rok . "<br>";
     echo $dni . "<br>";
 ?>
-
+   
+    </div>
 </body>
 </html>
