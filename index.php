@@ -44,10 +44,14 @@
             $dni = 31;
     }
     
-    echo $dzien . "<br>";
-    echo $miesiac . "<br>";
-    echo $rok . "<br>";
-    echo $dni . "<br>";
+//    echo $dzien . "<br>";
+//    echo $miesiac . "<br>";
+//    echo $rok . "<br>";
+//    echo $dni . "<br>";
+        
+    for($i = 1; $i <= $dni; $i++) {
+        echo '<div class="dzien">' . $i . '</div>';
+    }
 ?>
    
     </div>
