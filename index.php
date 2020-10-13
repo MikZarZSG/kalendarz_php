@@ -50,7 +50,11 @@
 //    echo $dni . "<br>";
         
     for($i = 1; $i <= $dni; $i++) {
-        echo '<div class="dzien">' . $i . '</div>';
+        if($i == $dzien) {
+            echo '<div class="dzien dzisiaj">' . $i . '</div>';
+        } else {
+            echo '<div class="dzien">' . $i . '</div>';
+        }
     }
 ?>
    
