@@ -45,7 +45,8 @@
     $dzienTygodnia = date("N");
         
     echo "<h2>Miesiąc: $miesiac</h2>";
-        
+    
+    /*
     for($i = 1; $i <= $dni; $i++) {
         if($i == $dzien) {
             echo '<div class="dzien dzisiaj">' . $i . '</div>';
@@ -55,6 +56,27 @@
     }
         
     echo "<p>$dzienTygodnia</p>";
+    */
+        
+    $iterTyg = 1;
+    $iterDzien = 1;
+        
+    $i = 0;
+        
+    while($i < 10) {
+        if($iterDzien == 1) {
+            if($iterTyg <= $dzienTygodnia) {
+                echo " 0 ";
+            } else {
+                echo " $iterDzien ";
+                $iterDzien++;
+            }
+        }
+        
+        $iterTyg++;
+        
+        $i++;
+    }
 ?>
    
     </div>
