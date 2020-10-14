@@ -42,6 +42,7 @@
     $miesiac = date("m");
     $rok = date("Y");
     $dni = pobierzIloscDni($miesiac, $rok);
+    $dzienTygodnia = date("N");
         
     echo "<h2>Miesiąc: $miesiac</h2>";
         
@@ -52,6 +53,8 @@
             echo '<div class="dzien">' . $i . '</div>';
         }
     }
+        
+    echo "<p>$dzienTygodnia</p>";
 ?>
    
     </div>
