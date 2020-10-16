@@ -45,7 +45,9 @@
     $pierwszyDzien = mktime(1, 0, 0, $miesiac, 1, $rok);
     $dzienTygodnia = date("N", $pierwszyDzien);
         
-    echo "<h2>Miesiąc: $miesiac</h2>";
+    echo "<h2>$miesiac.$rok</h2>";
+        
+    echo '<div class="kalendarz">';
     
     $iterTyg = 1;
     $iterDzien = 0;
@@ -54,7 +56,6 @@
         //Przed miesiącem
         if($iterTyg < $dzienTygodnia && $iterDzien == 0) {
             echo '<div class="dzien pusty"> </div>';
-            //echo '0 ';
         }
         else if($iterTyg == $dzienTygodnia && $iterDzien == 0) {
             $iterDzien++;
@@ -64,19 +65,14 @@
             //W trakcie miesiąca
             if($iterDzien == $dzien) {
                 echo '<div class="dzien dzisiaj">' . $iterDzien . '</div>';
-                //echo '' . $iterDzien . ' ';
             } else {
                 echo '<div class="dzien">' . $iterDzien . '</div>';
-                //echo '' . $iterDzien . ' ';
             }
             $iterDzien++;
         } else if($iterDzien > $dni){
             //Po miesiącu
             echo '<div class="dzien pusty"> </div>';
-            //echo '0 ';
         }
-        
-        //echo $iterTyg . ' ' . $iterDzien . '<br>';
             
         if($iterTyg < 7) {
             $iterTyg++;
@@ -90,6 +86,8 @@
     }
     
     echo '<div class="clear"></div>';
+        
+    echo '</div>';
 ?>
    
     </div>

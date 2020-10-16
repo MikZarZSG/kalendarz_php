@@ -16,6 +16,11 @@ h2 {
     font-family: Arial;
 }
 
+.kalendarz {
+    width: 448px;
+    margin: 0 auto;
+}
+
 .dzien {
     width: 50px;
     height: 50px;
