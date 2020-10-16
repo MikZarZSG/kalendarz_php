@@ -54,11 +54,10 @@
         
     while($iterTyg <= 7 || $iterDzien <= $dni) {
         //Przed miesiącem
-        if($iterTyg < $dzienTygodnia && $iterDzien == 0) {
-            echo '<div class="dzien pusty"> </div>';
-        }
-        else if($iterTyg == $dzienTygodnia && $iterDzien == 0) {
-            $iterDzien++;
+        if($iterDzien == 0) {
+            if($iterTyg < $dzienTygodnia) {
+                echo '<div class="dzien pusty"> </div>';
+            } else { $iterDzien++; }
         }
         
         if($iterDzien >= 1 && $iterDzien <= $dni) {
