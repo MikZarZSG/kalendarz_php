@@ -44,36 +44,22 @@
     $dni = pobierzIloscDni($miesiac, $rok);
     $pierwszyDzien = mktime(1, 0, 0, $miesiac, 1, $rok);
     $dzienTygodnia = date("N", $pierwszyDzien);
-    
-    //echo $dzienTygodnia;
         
     echo "<h2>Miesiąc: $miesiac</h2>";
-    
-    /*
-    for($i = 1; $i <= $dni; $i++) {
-        if($i == $dzien) {
-            echo '<div class="dzien dzisiaj">' . $i . '</div>';
-        } else {
-            echo '<div class="dzien">' . $i . '</div>';
-        }
-    }
-        
-    echo "<p>$dzienTygodnia</p>";
-    */
     
     $iterTyg = 1;
     $iterDzien = 0;
         
     while($iterTyg < 7 || $iterDzien <= $dni) {
-        if($iterDzien == 0) {
-            //Przed miesiącem
-            if($iterTyg < $dzienTygodnia) {
-                echo '<div class="dzien pusty"> </div>';
-            }
-            if($iterTyg + 1  >= $dzienTygodnia) {
-                $iterDzien++;
-            }
-        } else if($iterDzien >= 1 && $iterDzien <= $dni) {
+        //Przed miesiącem
+        if($iterTyg < $dzienTygodnia && $iterDzien == 0) {
+            echo '<div class="dzien pusty"> </div>';
+        }
+        else if($iterTyg == $dzienTygodnia && $iterDzien == 0) {
+            $iterDzien++;
+        }
+        
+        if($iterDzien >= 1 && $iterDzien <= $dni) {
             //W trakcie miesiąca
             if($iterDzien == $dzien) {
                 echo '<div class="dzien dzisiaj">' . $iterDzien . '</div>';
@@ -81,7 +67,7 @@
                 echo '<div class="dzien">' . $iterDzien . '</div>';
             }
             $iterDzien++;
-        } else {
+        } else if($iterDzien > $dni){
             //Po miesiącu
             echo '<div class="dzien pusty"> </div>';
         }
