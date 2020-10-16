@@ -62,20 +62,27 @@
     */
     
     $iterTyg = 1;
-    $iterDzien = 1;
+    $iterDzien = 0;
         
     while($iterTyg < 7 || $iterDzien <= $dni) {
-        if($iterDzien == 1) {
+        if($iterDzien == 0) {
+            //Przed miesiącem
             if($iterTyg < $dzienTygodnia) {
                 echo '<div class="dzien pusty"> </div>';
-            } else {
-                echo '<div class="dzien">' . $iterDzien . '</div>';
+            }
+            if($iterTyg + 1  >= $dzienTygodnia) {
                 $iterDzien++;
             }
-        } else if($iterDzien > 1 && $iterDzien <= $dni) {
-            echo '<div class="dzien">' . $iterDzien . '</div>';
+        } else if($iterDzien >= 1 && $iterDzien <= $dni) {
+            //W trakcie miesiąca
+            if($iterDzien == $dzien) {
+                echo '<div class="dzien dzisiaj">' . $iterDzien . '</div>';
+            } else {
+                echo '<div class="dzien">' . $iterDzien . '</div>';
+            }
             $iterDzien++;
         } else {
+            //Po miesiącu
             echo '<div class="dzien pusty"> </div>';
         }
         
