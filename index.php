@@ -39,6 +39,15 @@
         echo "<h2>$miesiac.$rok</h2>";
         
         echo '<div class="kalendarz">';
+        
+        echo '<div class="dzien opis">Pon</div>';
+        echo '<div class="dzien opis">Wt</div>';
+        echo '<div class="dzien opis">Śr</div>';
+        echo '<div class="dzien opis">Czw</div>';
+        echo '<div class="dzien opis">Pt</div>';
+        echo '<div class="dzien opis">Sob</div>';
+        echo '<div class="dzien opis">Ndz</div>';
+        echo '<div class="clear"></div>';
 
         $iterTyg = 1;
         $iterDzien = 0;

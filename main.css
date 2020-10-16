@@ -33,6 +33,11 @@ h2 {
     font-weight: 700;
 }
 
+.opis {
+    border: none;
+    width: 54px;
+}
+
 .pusty {
     border: 2px solid gray;
 }
