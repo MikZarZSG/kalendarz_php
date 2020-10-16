@@ -64,32 +64,31 @@
     $iterTyg = 1;
     $iterDzien = 1;
         
-    $i = 0;
-        
     while($iterTyg < 7 || $iterDzien <= $dni) {
         if($iterDzien == 1) {
             if($iterTyg < $dzienTygodnia) {
-                echo " 0 ";
+                echo '<div class="dzien pusty"> </div>';
             } else {
-                echo " $iterDzien ";
+                echo '<div class="dzien">' . $iterDzien . '</div>';
                 $iterDzien++;
             }
         } else if($iterDzien > 1 && $iterDzien <= $dni) {
-            echo " $iterDzien ";
+            echo '<div class="dzien">' . $iterDzien . '</div>';
             $iterDzien++;
         } else {
-            echo " 0 ";
+            echo '<div class="dzien pusty"> </div>';
         }
         
-        echo $iterTyg . "<br>";
-        
-        if($iterTyg < 7) $iterTyg++;
-        else $iterTyg = 1;
-        
-        
-        
-        $i++;
+        if($iterTyg < 7) {
+            $iterTyg++;
+        }
+        else {
+            echo '<div class="clear"></div>';
+            $iterTyg = 1;
+        }
     }
+    
+    echo '<div class="clear"></div>';
 ?>
    
     </div>
