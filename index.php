@@ -42,7 +42,10 @@
     $miesiac = date("m");
     $rok = date("Y");
     $dni = pobierzIloscDni($miesiac, $rok);
-    $dzienTygodnia = date("N");
+    $pierwszyDzien = mktime(1, 0, 0, $miesiac, 1, $rok);
+    $dzienTygodnia = date("N", $pierwszyDzien);
+    
+    //echo $dzienTygodnia;
         
     echo "<h2>Miesiąc: $miesiac</h2>";
     
@@ -57,23 +60,33 @@
         
     echo "<p>$dzienTygodnia</p>";
     */
-        
+    
     $iterTyg = 1;
     $iterDzien = 1;
         
     $i = 0;
         
-    while($i < 10) {
+    while($iterTyg < 7 || $iterDzien <= $dni) {
         if($iterDzien == 1) {
-            if($iterTyg <= $dzienTygodnia) {
+            if($iterTyg < $dzienTygodnia) {
                 echo " 0 ";
             } else {
                 echo " $iterDzien ";
                 $iterDzien++;
             }
+        } else if($iterDzien > 1 && $iterDzien <= $dni) {
+            echo " $iterDzien ";
+            $iterDzien++;
+        } else {
+            echo " 0 ";
         }
         
-        $iterTyg++;
+        echo $iterTyg . "<br>";
+        
+        if($iterTyg < 7) $iterTyg++;
+        else $iterTyg = 1;
+        
+        
         
         $i++;
     }
